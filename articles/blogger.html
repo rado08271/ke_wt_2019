@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style/blogs.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>Create blog</title>
+</head>
+<body>
+    <section>
+        <p class="crumble"><a href="../index.html" onclick=goBack()>Index</a> > <a href="articles.html" onclick=goBack()>Články</a> > <a href="about.html" onclick=goBack()>Vytvor blog</a></p>
+        <h1>Vytvor clanok</h1>
+        <form id="form_add_article" action="created.html">
+            <fieldset>
+                <legend>Autor:</legend>
+                Autor:
+                <input type="text" id="firstname" placeholder="Janko Hrasko" required>
+                e-mail:
+                <input type="text" name="lastname" placeholder="meno@example.com" pattern="^([A-Za-z1-9])+(\.|_)?[A-Za-z1-9]*\@[A-Za-z]*\.(com|sk|eu|org|cz)$" title="tvar@email.com alebo tvar_1@gmail.com"><br><br>
+
+                <label for="fileupload">Vyber fotku alebo vloz URL: </label>
+                <input type="file" name="fileupload" id="fileupload">
+                <input type="url" name="urlupload" placeholder="http://web.com/pic.png" id="urlupload">
+
+                <p>
+                    <label for="good-boy">Pouzit URL alebo Obrazok?</label>
+                    <input type="radio" name="likeIt" id="good-boy">URL
+                    <input type="radio" name="likeIt" id="bad-boy" checked="checked">Obrazok
+                </p>
+                <p id="react-to"></p>
+
+                Zadaj cislo:
+                <input type="tel" name="t_number" placeholder="0905 123 456" pattern="([0-9]{4} )([0-9]{3} )([0-9]{3})">
+            </fieldset>
+            <fieldset>
+                <legend>Clanok:</legend>
+                Zadaj nazov clanku:
+                <input type="tel" name="t_number" placeholder="Night-life v Kosiciach" required pattern="^[A-Za-z][A-Za-z1-9 ]*$" title="Povolene su iba cisla, pismena, medzery clanok musi zacinat pismenom!">
+                Zadaj rubriku:
+                <input list="category" autocomplete=on name="category" placeholder="Vyber rubriku">
+
+                <datalist id="category">
+                    <option>Cestovanie</option>
+                    <option>Miesta</option>
+                    <option>Recenzia</option>
+                    <option>Informacie</option>
+                    <option>Event</option>
+                    <option>Clanok</option>
+                    <option>Umelecka tvorba</option>
+                    <option>Zo zivota</option>
+                    <option>Politika</option>
+                    <option>Zabava</option>
+                </datalist>
+
+                <p>
+                    <textarea name="text_area" rows="20" cols="70" placeholder="Sem vloz obsah clanku" spellcheck="true"> </textarea>
+                </p>
+                <input type="submit" value="Odoslat clanok">
+                <input type="reset" value="Zrusit">
+                <!--<button onclick=goBack()>Spat na clanky</button>-->
+            </fieldset>
+        </form>
+    </section>
+
+    <script>
+        function goBack(){
+            if(confirm("Ozaj? Data budu stratene!"))
+                document.location = "articles.html";
+        }
+    </script>
+</body>
+</html>

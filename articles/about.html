@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style/blogs.css" media="screen" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>BLOG | Kosice</title>
+</head>
+<body>
+    <div class="hamburger">
+        <label for="check">&#9776;</label>
+        <input type="checkbox" id="check" onchange=" logiIt()"/>
+    </div>
+
+    <div id="wow">
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Spat domov</a></li>
+                <li><a href="./articles.html">Spat na clanky</a></li>
+                <li><a href="blogger.html"><span class="red">Vytvor clanok</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="author">
+        <i>16.02.2019</i>
+        <a href="mailto:figura.radoslav@gmail.com?Subject=KE_Question">&#9993; Radoslav Figura</a>
+    </div>
+
+    <p class="crumble"><a href="../index.html">Index</a> > <a href="articles.html">Články</a> > <a href="about.html">O Košiciach</a></p>
+    <main>
+        <article class="article-body">
+            <picture class="image">
+                <source srcset="./pics/kosices.png"
+                        media="(max-width: 400px)" />
+                <source srcset="./pics/kosice.png"
+                        media="(max-width: 800px)" />
+                <source srcset="./pics/kosiceb.jpg"
+                        media="(max-width: 1200px)" />
+                <img src="../pics/kosice.png" alt="symbol mesta" title="erb">
+            </picture>
+
+            <h1 class="header">Základné informácie o meste</h1>
+            <h3 class="intro">Miesto na Slovensku</h3>
+            <p class="paragraph">Košice sú metropolou východného Slovenska a s vyše 240 000 obyvateľmi druhým najväčším mestom na Slovensku. Mesto je súčasťou Košickej aglomerácie s 355 000 obyvateľmi a Košicko-prešovskej aglomerácie, ktorá s 555 800 obyvateľmi patrí medzi najväčšie urbanizované oblasti na Slovensku</p>
+            <p class="paragraph"><b>Nadmorska vyska:</b> 206m</p>
+            <p class="paragraph"><b>Populacia</b> 239 171 (2016) <i>Organizácia Spojených národov</i></p>
+
+            <table class="table-main">
+                <caption>TOP 3 zaujimave miesta</caption>
+                <thead>
+                <tr>
+                    <th>Nazov</th>
+                    <th>Poloha</th>
+                    <th>Typ</th>
+                </tr>
+                <tbody>
+                <tr>
+                    <th>Dom svatej Alzbety</th>
+                    <td>Hlavná 30/54</td>
+                    <td>Katedrála</td>
+                </tr>
+                <tr>
+                    <th>Zoologická záhrada Košice</th>
+                    <td>Široká 31</td>
+                    <td>ZOO</td>
+                </tr>
+                <tr>
+                    <th>Východoslovenské múzeum</th>
+                    <td>Námestie Maratónu mieru 2, </td>
+                    <td>Muzeum</td>
+                </tr>
+            </table>
+
+            <div class="list">
+
+                <h2 >Nazvy od 15 storocia</h2>
+                <ul>
+                    <li>1420	Caschowia</li>
+                    <li>1441	Cassovia, Kassa, Kaschau, Košice</li>
+                    <li>1773	Cassovia, Kassa, Kaschau, Kossicze</li>
+                    <li>1786	Cassovia, Kascha, Kaschau, Kossice</li>
+                    <li>1808	Cassovia, Kaschau, Kassa, Kossice</li>
+                    <li>1863 – 1913	Kassa</li>
+                    <li>1920 – 1938	Košice</li>
+                    <li>1938 – 1945	Kassa</li>
+                    <li>1945–	Košice</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+    <section class="comment-section">
+        <div class="show-comments" >
+            <p>Pridat komentar</p>
+            <form>
+                <label for="fname">Meno</label>
+                <input type="text" id="fname" placeholder="Jozko Mrkvivka"/>
+                <label for="fname">Komentar</label>
+                <input type="text" id="cmnt" placeholder="Velmi super pekne"/>
+                <input type="submit" id="submitIt"/>
+            </form>
+        </div>
+        <div class="comments">
+            <h6>Comment section</h6>
+            <p id="comment"></p>
+        </div>
+    </section>
+
+    <script src="../scripts/hamburger.js"></script>
+
+</body>
+</html>

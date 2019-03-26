@@ -1,0 +1,244 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+    background-color: #E8EDDF;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.author {
+    padding: 20px;
+    color: #002639;
+}
+
+.author a {
+    color: #dd3344;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.author a:hover {
+    color: #9a242f;
+    text-decoration: none;
+    margin: 5px;
+}
+
+main {
+    /*display: inline;*/
+}
+
+.article-body {
+    /*background-color: #dd3344;*/
+    border-right: solid #002639 1px;
+    /*border-bottom: solid #002639 1px;*/
+    padding-left: 15px;
+
+}
+
+.image img{
+    margin-right: 5%;
+    max-width: 20%;
+    float: right;
+}
+
+.image:hover {
+
+}
+
+.header {
+    text-transform: uppercase;
+    width: 40%;
+}
+
+.intro {
+    width: 60%;
+
+}
+
+.paragraph {
+
+}
+
+.table-main {
+    border: solid #b3b7ac 1px;
+    margin: 10px;
+}
+
+.table-main thead {
+    background-color: #b3b7ac;
+}
+
+.table-main tr:nth-child(even){
+    background-color: #b3b7ac;
+}
+
+caption {
+
+}
+
+.list ul li{
+    list-style: none;
+}
+
+.list a {
+    color: #002639;
+}
+
+.list a:hover {
+    color: #979797;
+}
+
+.list h2 {
+    font-size: medium;
+}
+
+.comment-section {
+    padding: 5px;
+
+}
+
+.show-comments {
+    transform: translateY(50%);
+    /*display: inline-flex;*/
+    text-transform: uppercase;
+}
+
+.comments {
+   /*border:  solid #FECB04 3px;*/
+    border-bottom: solid #002639 1px;
+}
+
+@media only screen and (max-width: 767px) {
+    .show-comments {
+        position: relative;
+        background-color: #002639;
+        color: #E8EDDF;
+    }
+
+    .article-body {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .show-comments {
+        position: relative;
+        background-color: #002639;
+        color: #E8EDDF;
+    }
+    .article-body {
+        width: 70%;
+    }
+}
+
+/*@media screen and (min-width: 960px) {*/
+@media only screen and (min-width: 1025px) {
+    .article-body {
+        width: 70%;
+    }
+
+    .comment-section {
+        position: absolute;
+        float: right;
+        top: 5%;
+        right: 10%;
+        min-height: 80%;
+        min-width: 10%;
+    }
+
+    .show-comments {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .comments {
+        padding: 5px;
+        position: absolute;
+        min-height: 80%;
+        min-width: 10%;
+    }
+}
+
+.comments a{
+    border-bottom: solid #002639 1px;
+}
+
+#comment {
+
+}
+
+input {
+    background-color: #979797;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#fname {
+
+}
+
+#cmnt {
+
+}
+
+#submitIt {
+    overflow: hidden;
+}
+
+#check {
+    visibility: hidden;
+}
+
+.hamburger {
+    font-size: 2em;
+}
+
+.menu {
+    position: absolute;
+    background-color: #002639;
+    /*width: 2px%;*/
+    /*height: 20%;*/
+    width: 100%;
+    /*height: 40px;*/
+    line-height: 40px;
+}
+
+
+.menu ul li {
+    display: inline-flex;
+    list-style: none;
+    width: 33%;
+}
+
+.menu ul li a {
+    color: #FECB04;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.menu ul li a:hover {
+    color: #c9a103;
+    text-decoration: none;
+}
+
+.hamburger {
+}
+
+.hamburger p {
+    border-bottom: solid black 3px;
+
+}
+
+.crumble {
+    padding-left: 10px;
+}
+
+.crumble a{
+    color: #002639;
+    text-decoration: none;
+}

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./style/index.css" media="screen" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>Kosice | Index</title>
+</head>
+<body>
+<header id="header-bar">
+    <div class="header-bar-inner">
+        <a class="site_logo" href="./index.html">
+            KOSICE
+            <!--<img src="./pics/kosice.png" alt="site logo">-->
+        </a>
+        <nav>
+            <ul class="menu fir-menu">
+                <li class="menu-item"><a href="articles/about.html">Mesto</a></li>
+                <li class="menu-item"><a href="articles/articles.html">Články</a></li>
+                <li class="menu-item"><a href="#">Udalosti</a></li>
+                <li class="menu-item"><a href="#">Ľudia</a></li>
+                <li class="menu-item"><a href="#">Kam</a></li>
+                <li class="menu-item"><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <ul class="menu sec-menu">
+            <li class="menu-item search">
+                <div class="search">
+                    <form method="get" class="search-form" action="#">
+                        <button class="search-form-btn">
+                            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+                                <circle fill="none" stroke="#002639" stroke-miterlimit="10" cx="42.76" cy="48.079" r="19.187"/>
+                                <line fill="none" stroke="#002639" stroke-miterlimit="10" x1="56.423" y1="61.546" x2="88.321" y2="93.444"/>
+                            </svg>
+                        </button>
+                        <input type="text" class="search-form-field" placeholder="Search" value name="s" autocomplete="off">
+                    </form>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+</header>
+
+<div class="countdown">
+    <!--<h5>Cas do dalsej odovzdavky</h5>-->
+    <p id="countdown-timer"></p>
+</div>
+
+<div class="blog-about">
+    <p class="text">Košice sú metropolou východného Slovenska a s vyše 240 000 obyvateľmi druhým najväčším mestom na Slovensku. Mesto je súčasťou Košickej aglomerácie s 355 000 obyvateľmi a Košicko-prešovskej aglomerácie, ktorá s 555 800 obyvateľmi patrí medzi najväčšie urbanizované oblasti na Slovensku</p>
+    <p class="text"><b>Nadmorska vyska:</b> 206m</p>
+    <p class="text"><b>Populacia</b> 239 171 (2016) <i>Organizácia Spojených národov</i></p>
+</div>
+
+<!-- TODO add window nav for responsive web-->
+<section class="contact">
+    <h1>Ozvi sa nam</h1>
+        <div class="contact-title">
+            <p>Ked mas nejake otazky alebo nieco nesedi kludne sa ozvi</p>
+        </div>
+    <div class="row">
+        <div class="column">
+            <form>
+                <br><label for="fname">Meno</label><br>
+                <input type="text" id="fname" name="firstname" placeholder="Tvoje meno..">
+                <br><label for="lname">Priezvisko</label><br>
+                <input type="text" id="lname" name="lastname" placeholder="Tvoje priezvisko..">
+
+                <br><label for="country">Skadzi si?</label><br>
+                <select id="country" name="country">
+                    <option value="presov">Od Presova</option>
+                    <option value="kosice">Od Kosic</option>
+                    <option value="other_city">Indze</option>
+                </select>
+                <br><label for="subject">Koment</label><br>
+                <textarea id="subject" name="subject" placeholder="Co ta trapi?" rows="5" cols="30" spellcheck="true"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-bar">
+    <nav class="footer-menu">
+        <div class="footer-menu-inner">
+            <h2 class="links">Zaujimave odkazy</h2>
+            <ul class="footer-links-list">
+                <li><a href="https://www.kosice.sk/sk">kosice.sk</a></li>
+                <li><a href="https://www.radiokosice.sk/">RadioKE</a></li>
+                <li><a href="https://www.visitkosice.org/">visitkosice</a></li>
+                <li><a href="https://sk.wikipedia.org/wiki/Ko%C5%A1ice">Wiki</a></li>
+                <li><a href="https://kosicednes.sk/">Kosice:DNES</a></li>
+                <li><a href="http://slovakia.travel/kosice">SlovakiaTravel</a></li>
+            </ul>
+            <a>C Radoslav Figura TUKE 2019</a>
+        </div>
+    </nav>
+
+</footer>
+<script>
+    document.addEventListener('scroll', scroll);
+    //
+    function scroll() {
+        if(window.scrollY < 80){
+            console.log("top");
+            document.getElementById("header-bar").style.position = "relative";
+            document.getElementById("header-bar").style.background = "#002639";
+        }else{
+            document.getElementById("header-bar").style.position = "fixed";
+            document.getElementById("header-bar").style.background = "#002639";
+        }
+    }
+
+    setInterval(timer, 1000);
+
+    function timer() {
+        var timeToCountDown = new Date('March 30, 2019 22:00:00').getTime();
+        var now = new Date().getTime();
+
+        var spareTime = timeToCountDown - now;
+        console.log(spareTime);
+
+        var days = Math.floor(spareTime / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((spareTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((spareTime % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((spareTime % (1000 * 60)) / 1000);
+
+        var countdownString = days + " dni, " + hours + " hodin, " + minutes + " minut, " + seconds + " sekund";
+
+        document.getElementById('countdown-timer').innerHTML = countdownString;
+
+        if(spareTime < 0) {
+            document.getElementById('countdown-timer').innerHTML = "Cas dosiel";
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

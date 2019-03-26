@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style/blogs.css" media="screen" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>BLOG | Maraton mieru</title>
+</head>
+<body>
+
+    <div class="hamburger">
+        <label for="check">&#9776;</label>
+        <input type="checkbox" id="check" onchange=" logiIt()"/>
+    </div>
+
+    <div id="wow">
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Spat domov</a></li>
+                <li><a href="./articles.html">Spat na clanky</a></li>
+                <li><a href="blogger.html"><span class="red">Vytvor clanok</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="author">
+        <i>16.02.2019</i>
+        <a href="mailto:figura.radoslav@gmail.com?Subject=KE_Question">&#9993; Radoslav Figura</a>
+    </div>
+
+    <p class="crumble"><a href="../index.html">Index</a> > <a href="articles.html">Články</a> > <a href="about.html">Share'n go</a></p>
+
+    <main>
+        <article class="article-body">
+            <img src="../pics/sharengo.jpg" alt="Auto od sharengo" width="100" title="Zhidou SK" class="image">
+            <h1 class="header">Car sharing kosice</h1>
+            <h3 class="intro">Novinka v Kosiciach</h3>
+            <p class="paragraph">
+                Nedávno sa v Bratislave rozbehlo zdieľanie bicyklov, v Košiciach je však už reč o požičiavaní si áut.
+                Už o približne 99 dní by sa v metropole východu mal rozbehnúť nezvyčajný carsharing, vďaka ktorému môžeš
+                nechať auto doma a požičať si jedno z voľných v košických uliciach.
+            </p>
+            <p class="paragraph">
+                Dostupné zatiaľ nie sú takmer žiadne informácie, no projekt nesie názov SHARE'Ngo Košice a stojí za ním
+                predovšetkým ázijský výrobca elektromobilov ZhiDou. Práve ich vozidlá budú v carsharingu dostupné.
+            </p>
+            <p class="paragraph">
+                Podobný systém zaviedli už v niektorých talianskych mestách a práve Košice sú ďalšie v rade. Momentálne
+                nie sú dostupné ani informácie o cenových podmienkach, no keďže ide o ekologický variant, ktorý obmedzuje
+                kupovanie zbytočných automobilov, projekt má rozhodne potenciál Košiciam pomôcť.
+            </p>
+            <p class="paragraph">
+                Aj napriek tomu, že sa SHARE'Ngo Košice prezentuje ako prvý slovenský carsharing, nemá pravdu, i keď ide o prvý väčší projekt
+                v tejto sfére. Šesť elektromobilov na požičanie nájdeš napríklad každý deň pred bratislavskou Starou tržnicou v rámci projektu
+                Volkswagen e-Up!
+            </p>
+        </article>
+    </main>
+
+    <section class="comment-section">
+        <div class="show-comments" >
+            <h6>Pridat komentar</h6>
+            <form>
+                <label for="fname">Meno</label>
+                <input type="text" id="fname" placeholder="Jozko Mrkvivka"/>
+                <label for="fname">Komentar</label>
+                <input type="text" id="cmnt" placeholder="Velmi super pekne"/>
+                <input type="submit" id="submitIt"/>
+            </form>
+        </div>
+        <div class="comments">
+            <a>Comment section</a>
+            <p id="comment"></p>
+        </div>
+    </section>
+
+    <script src="../scripts/hamburger.js"></script>
+
+    <script>
+        if ( document.getElementById("submitIt"))
+        var string = document.getElementById("fname").innerText;
+
+        console.log(string);
+
+    </script>
+
+
+</body>
+</html>

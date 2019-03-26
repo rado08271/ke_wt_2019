@@ -1,0 +1,28 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.created {
+    text-align: center;
+}
+
+.created p {
+    font-size: 3em;
+    color: #dd3344;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.crumble {
+    padding-left: 10px;
+}
+
+.crumble a{
+    color: #002639;
+    text-decoration: none;
+}

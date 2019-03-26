@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style/blogs.css" media="screen" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <title>BLOG | Maraton mieru</title>
+</head>
+<body>
+
+    <div class="hamburger">
+        <label for="check">&#9776;</label>
+        <input type="checkbox" id="check" onchange=" logiIt()"/>
+    </div>
+
+    <div id="wow">
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Spat domov</a></li>
+                <li><a href="./articles.html">Spat na clanky</a></li>
+                <li><a href="blogger.html"><span class="red">Vytvor clanok</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="author">
+        <i>16.02.2019</i>
+        <a href="mailto:figura.radoslav@gmail.com?Subject=KE_Question">&#9993; Radoslav Figura</a>
+    </div>
+
+    <p class="crumble"><a href="../index.html">Index</a> > <a href="articles.html">Články</a> > <a href="about.html">Medzinárodný maratón mieru</a></p>
+
+    <main>
+        <article class="article-body">
+            <img src="../pics/ftd2.jpg" alt="Maraton Mieru" title="Bezci pod domom" class="image">
+            <h1 class="header">Maraton Mieru Kosice</h1>
+            <h3 class="intro">Maraton mieru sa kona kazdorocne v Kosiciach tesi sa mnohym zucastnenym z celeho svveta</h3>
+            <p class="paragraph">Medzinárodný maratón mieru (MMM) v Košiciach alebo Košický maratón je najstarší maratón v Európe a tretí najstarší na svete (po Bostonskom a Yonkerskom maratóne).</p>
+            <p class="paragraph">Po prvý raz sa bežal v roku 1924. MMM štartuje každoročne v prvú októbrovú nedeľu o 9:00 hod. spred hotela Doubletree by Hilton (bývalý hotel Slovan) na Hlavnej ulici.</p>
+            <p class="paragraph"><i>Trať maratónu je rovinatá. Bežia sa dva okruhy v historickom a širšom centre mesta - po asfaltových, resp. kamenných (porfýrová dlažba na Hlavnej ulici) cestách s absolútnym vylúčením dopravy.</i></p>
+
+            <table class="table-main">
+                <caption>Vitazi od roku 2015</caption>
+                <thead>
+                <tr>
+                    <th>Rok</th>
+                    <th>Muzi</th>
+                    <th>Zeny</th>
+                </tr>
+                <tbody>
+                <tr>
+                    <th>2015</th>
+                    <td>Samuel Kiplimo Kosgei ( Keňa )</td>
+                    <td>Mulu Diro Melka (Etiópia)</td>
+                </tr>
+                <tr>
+                    <th>2016</th>
+                    <td>David Kiyeng (Keňa)</td>
+                    <td>Chaltu Tafa Waka (Etiopie)</td>
+                </tr>
+                <tr>
+                    <th>2017</th>
+                    <td>Reuben Kiprop Kerio (Keňa)</td>
+                    <td>Sheila Jerotich (Keňa)</td>
+                </tr>
+                <tr>
+                    <th>2018</th>
+                    <td>Raymond Kipchumba Choge (Keňa)</td>
+                    <td>Milliam Naktar Ebongonová (Keňa)</td>
+                </tr>
+            </table>
+        </article>
+    </main>
+    <section class="comment-section">
+        <div class="show-comments" >
+            <h6>Pridat komentar</h6>
+            <form>
+                <label for="fname">Meno</label>
+                <input type="text" id="fname" placeholder="Jozko Mrkvivka"/>
+                <label for="fname">Komentar</label>
+                <input type="text" id="cmnt" placeholder="Velmi super pekne"/>
+                <input type="submit" id="submitIt"/>
+            </form>
+        </div>
+        <div class="comments">
+            <a>Comment section</a>
+            <p id="comment"></p>
+        </div>
+    </section>
+    <script src="../scripts/hamburger.js"></script>
+
+</body>
+</html>
