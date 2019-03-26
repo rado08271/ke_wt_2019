@@ -242,3 +242,10 @@ input {
     color: #002639;
     text-decoration: none;
 }
+
+img {
+    margin-right: 5%;
+    max-width: 40%;
+    min-width: 20%;
+    float: right;
+}
