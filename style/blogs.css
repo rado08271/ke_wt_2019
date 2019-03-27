@@ -123,6 +123,10 @@ caption {
     .article-body {
         width: 100%;
     }
+
+    .comments {
+        visibility: hidden;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -132,7 +136,11 @@ caption {
         color: #E8EDDF;
     }
     .article-body {
-        width: 70%;
+        /*width: 70%;*/
+    }
+
+    .comments {
+        visibility: hidden;
     }
 }
 

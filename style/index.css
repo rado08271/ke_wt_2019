@@ -262,3 +262,20 @@ section {
     color: #002639;
     text-decoration: none;
 }
+
+.site-map {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.site-map ul li {
+    list-style: none;
+}
+
+.site-map a {
+    font-size: 2em;
+    width: 100%;
+    color: #002639;
+}
