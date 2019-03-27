@@ -26,6 +26,7 @@ body, html {
     color: #9a242f;
     text-decoration: none;
     margin: 5px;
+    text-shadow: 2px 2px #002639;
 }
 
 main {
@@ -111,6 +112,7 @@ caption {
 .comments {
    /*border:  solid #FECB04 3px;*/
     border-bottom: solid #002639 1px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {
@@ -239,7 +241,6 @@ input {
 
 .hamburger p {
     border-bottom: solid black 3px;
-
 }
 
 .crumble {

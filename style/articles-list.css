@@ -41,6 +41,7 @@ body, html {
     transition: .5s;
     background-color: #b3b7ac;
     border-bottom: solid #dd3344 40px;
+    box-shadow: 14px 10px 80px 0px #002639;
 }
 
 .sm-icon {
