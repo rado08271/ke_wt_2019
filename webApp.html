@@ -10,64 +10,31 @@
 
 <h1>Device orientation and motion demo</h1>
 
-
-<h2>Device orientation data</h2>
-
-<p>
-    DeviceOrientationEvent.absolute =
-    <span id="doeAbsolute"></span>
-</p>
-<p>
-    DeviceOrientationEvent.alpha =
-    <span id="doeAlpha"></span>
-</p>
-<p>
-    DeviceOrientationEvent.beta =
-    <span id="doeBeta"></span>
-</p>
-<p>
-    DeviceOrientationEvent.gamma =
-    <span id="doeGamma"></span>
-</p>
-
-<p id="doeErr">
-
-</p>
-
-
-<h2>Device motion data</h2>
-
-<p>
-    DeviceMotionEvent.acceleration.x =
-    <span id="dmeAccX"></span>
-</p>
-<p>
-    DeviceMotionEvent.acceleration.y =
-    <span id="dmeAccY"></span>
-</p>
-<p>
-    DeviceMotionEvent.acceleration.z =
-    <span id="dmeAccZ"></span>
-</p>
-
 <p id="dmeErr">
 
 </p>
 
 
 <script type="text/javascript">
+    var x = 0, y = 0, z=0;
+
     function doeHandler(ev) {
-        document.getElementById("doeAbsolute").innerHTML= ev.absolute;
-        document.getElementById("doeAlpha").innerHTML= ev.alpha;
-        document.getElementById("doeBeta").innerHTML= ev.beta;
-        document.getElementById("doeGamma").innerHTML= ev.gamma;
+        x = ev.alpha;
+        y = ev.beta;
+        z = ev.gamma;
+//        document.getElementById("doeAbsolute").innerHTML= ev.absolute;
+//        document.getElementById("doeAlpha").innerHTML= ev.alpha;
+//        document.getElementById("doeBeta").innerHTML= ev.beta;
+//        document.getElementById("doeGamma").innerHTML= ev.gamma;
     }
 
-    function dmeHandler(ev) {
-        document.getElementById("dmeAccX").innerHTML= ev.acceleration.x;
-        document.getElementById("dmeAccY").innerHTML= ev.acceleration.y;
-        document.getElementById("dmeAccZ").innerHTML= ev.acceleration.z;
-    }
+    console.log("X: " + x + "\nY: " + y + "\nZ: " + z);
+
+
+
+
+
+
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', doeHandler);
@@ -75,11 +42,7 @@
         document.getElementById("doeErr").innerHTML="ERROR: DeviceOrientationEvent not supported";
     }
 
-    if (window.DeviceMotionEvent) {
-        window.addEventListener('devicemotion', dmeHandler);
-    }else{
-        document.getElementById("dmeErr").innerHTML="ERROR: DeviceMotionEvent not supported";
-    }
+
 
 </script>
 
