@@ -24,7 +24,7 @@ body, html {
 
 .grid {
     display: block;
-
+    width: 100%;
 }
 
 .contain {
@@ -33,7 +33,7 @@ body, html {
     padding: 20px;
     transition: .5s;
     background-color: #E8EDDF;
-
+    width: 100%;
 }
 
 .contain:hover {
@@ -112,3 +112,93 @@ body, html {
     color: #002639;
     text-decoration: none;
 }
+
+#clanky {
+    margin: 16px;
+    color: #dd3344;
+}
+
+#navigacia {
+    margin: 16px;
+}
+
+.buttons button {
+    background-color: #FECB04;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+
+}
+
+#show {
+    visibility: visible;
+}
+
+#hide {
+    visibility: hidden;
+}
+
+.toggle-menu {
+    position: relative;
+    text-align: right;
+    float: right;
+    color: #dd3344;
+    width: 100%;
+    cursor: pointer;
+    /*margin-left: 16px;*/
+    margin-right: 16px;
+}
+
+.toggle-menu:hover {
+    border-top: solid #002639 3px;
+    width: 10%;
+    transition: .3s;
+    transform: scale(1.1);
+    color: #9a242f;
+    float: right;
+    margin-right: 16px;
+
+}
+
+.menu {
+    padding-top: 16px;
+    position: absolute;
+    right: 0;
+    color: #002639;
+}
+
+.menu > p {
+    border: solid #002639 3px;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.menu > p:hover {
+    background: #b3b7ac;
+}
+
+.menu a {
+    color: #9a242f;
+    text-decoration: none   ;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+.color-blind {
+    background: white;
+    color: #002639;
+    font-size: xx-large;
+
+}
+

@@ -20,7 +20,7 @@
         <nav>
             <ul class="menu fir-menu">
                 <li class="menu-item"><a href="articles/about.html">Mesto</a></li>
-                <li class="menu-item"><a href="articles/articles.html">Články</a></li>
+                <li class="menu-item"><a href="listOfArticles.html">Články</a></li>
                 <li class="menu-item"><a href="elPaginas.html">Mapa Stránok</a></li>
                 <li class="menu-item"><a href="#">Ľudia</a></li>
                 <li class="menu-item"><a href="#">Kam</a></li>
@@ -31,15 +31,15 @@
         <ul class="menu sec-menu">
             <li class="menu-item search">
                 <div class="search">
-                    <form method="get" class="search-form" action="#">
-                        <button class="search-form-btn">
+                    <form method="get" class="search-form" action="searchResults.html">
+                        <button class="search-form-btn" onclick="getInfo()">
                             <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
                                 <circle fill="none" stroke="#002639" stroke-miterlimit="10" cx="42.76" cy="48.079" r="19.187"/>
                                 <line fill="none" stroke="#002639" stroke-miterlimit="10" x1="56.423" y1="61.546" x2="88.321" y2="93.444"/>
                             </svg>
                         </button>
-                        <input type="text" class="search-form-field" placeholder="Search" value name="s" autocomplete="off">
+                        <input id="search-articles" type="text" class="search-form-field" placeholder="Search" name="s" autocomplete="off">
                     </form>
                 </div>
 
@@ -123,7 +123,7 @@
     setInterval(timer, 1000);
 
     function timer() {
-        var timeToCountDown = new Date('March 30, 2019 22:00:00').getTime();
+        var timeToCountDown = new Date('April 17, 2019 08:45:32').getTime();
         var now = new Date().getTime();
 
         var spareTime = timeToCountDown - now;
@@ -144,6 +144,15 @@
     }
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<script src="js/settings.js"></script>
+<script src="js/mustacheRenderer.js"></script>
+<script src="js/ajajCallsVanilla.js"></script>
+<script src="js/queryStringProcess.js"></script>
+<script src="js/articles.js"></script>
+
 
 
 </body>
