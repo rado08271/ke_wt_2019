@@ -1,0 +1,12 @@
+    {{#articles}}
+    <li class="contain">
+        {{imageLink}}
+            <img class="sm-icon" src="{{imageLink}}" alt=""/>
+        {{^imageLink}}
+            <i>*No image preview</i>
+        {{/imageLink}}
+        <a href="article.html?id={{id}}" class="name">{{title}}</a>
+        <p class="info">{{author}}</p>
+        <p class="name">{{dateCreated}}</p>
+    </li>
+    {{/articles}}

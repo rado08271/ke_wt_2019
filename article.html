@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Článok / Article</title>
+    <link rel="stylesheet" type="text/css" href="style/blogs.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hamburger">
+        <label for="check">&#9776;</label>
+        <input type="checkbox" id="check" onchange=" logiIt()"/>
+    </div>
+
+    <div id="wow">
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Spat domov</a></li>
+                <li><a href="listOfArticles.html">Spat na clanky</a></li>
+                <li><a href="articles/blogger.html"><span class="red">Vytvor clanok</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-blog">
+        <div id="article">
+
+        </div>
+
+        <div class="comment-section">
+            <div class="comments">
+                <a>Comment section</a>
+                <div id="comment">
+
+                </div>
+            </div>
+
+
+            <div class="show-comments" >
+                <h6>Add comment</h6>
+                <form>
+                    <label for="fname">Meno</label>
+                    <input type="text" id="fname" placeholder="Jozko Mrkvivka"/>
+                    <label for="fname">Komentar</label>
+                    <input type="text" id="cmnt" placeholder="Velmi super pekne"/>
+                    <input type="submit" id="submitIt"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/stdJS/hamburger.js"></script>
+
+    <script>
+        if ( document.getElementById("submitIt"))
+            var string = document.getElementById("fname").innerText;
+
+        console.log(string);
+
+    </script>
+
+
+    <!--Spolocne / Common -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+    <script src="js/settings.js"></script>
+    <script src="js/mustacheRenderer.js"></script>
+    <script src="js/ajajCallsVanilla.js"></script>
+    <script src="js/queryStringProcess.js"></script>
+    <script src="js/articles.js"></script>
+
+</body>
+</html>
+

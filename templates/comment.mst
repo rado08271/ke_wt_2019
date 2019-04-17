@@ -1,0 +1,7 @@
+{{#comments}}
+    <div class="theComment">
+        <a>{{author}}</a>
+        <p class="date">{{lastUpdated}}</p>
+        <p>{{{text}}}</p>
+    </div>
+{{/comments}}

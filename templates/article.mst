@@ -1,0 +1,16 @@
+    <div class="author">
+        <i>{{lastUpdated}}</i>
+        <a>{{author}}</a>
+    </div>
+    <article class="article-body>
+        <header class="header">
+            <h1>{{title}}</h1>
+        </header>
+        {{imageLink}}
+            <img src="{{imageLink}}" class="image" width="100" alt="">
+        {{^imageLink}}
+        <p><p>
+        {{/imageLink}}
+        <p class="paragraph">{{{content}}}</p>
+    </article>
+    <p>{{tags}}</p>

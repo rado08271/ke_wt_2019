@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Mustache šablona / Mustache  template</title>
+</head>
+<body>
+<header>
+    <h1>Jednoduchý objekt / Simple object</h1>
+</header>
+
+<article>
+    <header>
+        <h2>Údaje / Data</h2>
+    </header>
+    <pre id ="data"></pre>
+</article>
+
+
+<article>
+    <header>
+        <h2>Šablona / Template</h2>
+    </header>
+    <pre id ="template"></pre>
+</article>
+
+
+<article>
+    <header>
+        <h2>Výsledné HTML / Resulting Html</h2>
+    </header>
+    <div id ="HtmlResult"></div>
+</article>
+
+<!----------------------------- Mustache template -------------------------------------------------------------------->
+
+<script id="mtemplate" type="text/template">
+    {{#buttons}}
+    <p>btn: {{destination}}</p>
+    {{/buttons}}
+</script>
+
+<!-----------------------------JSON------------------------------------------------------------------------------------>
+<script id="JsonData" type="application/json">
+    {
+        "buttons": [
+          {
+              "destination": "lol",
+              "text": "Prev"
+          },
+          {
+              "destination": "lol",
+              "text": "Prev"
+          }
+        ]
+    }
+</script>
+
+<!----------------------------- JavaScript ---------------------------------------------------------------------------->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+<script src="js/stdJS/mustacheButtonProcess.js"></script>
+</body>
+</html>
