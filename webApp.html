@@ -8,6 +8,25 @@
 
 <body>
 
+<h2>Device orientation data</h2>
+
+<p>
+    DeviceOrientationEvent.absolute =
+    <span id="doeAbsolute"></span>
+</p>
+<p>
+    DeviceOrientationEvent.alpha =
+    <span id="doeAlpha"></span>
+</p>
+<p>
+    DeviceOrientationEvent.beta =
+    <span id="doeBeta"></span>
+</p>
+<p>
+    DeviceOrientationEvent.gamma =
+    <span id="doeGamma"></span>
+</p>
+
 <h1>Device orientation and motion demo</h1>
 
 <p id="dmeErr">
@@ -22,19 +41,13 @@
         x = ev.alpha;
         y = ev.beta;
         z = ev.gamma;
-//        document.getElementById("doeAbsolute").innerHTML= ev.absolute;
-//        document.getElementById("doeAlpha").innerHTML= ev.alpha;
-//        document.getElementById("doeBeta").innerHTML= ev.beta;
-//        document.getElementById("doeGamma").innerHTML= ev.gamma;
+        document.getElementById("doeAbsolute").innerHTML= ev.absolute;
+        document.getElementById("doeAlpha").innerHTML= ev.alpha;
+        document.getElementById("doeBeta").innerHTML= ev.beta;
+        document.getElementById("doeGamma").innerHTML= ev.gamma;
     }
 
     console.log("X: " + x + "\nY: " + y + "\nZ: " + z);
-
-
-
-
-
-
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', doeHandler);
