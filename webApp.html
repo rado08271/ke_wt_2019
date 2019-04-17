@@ -65,7 +65,7 @@
     <div id="notice"></div>
 
     <div class="compass">
-        <div class="arrow"></div>
+        <div class="arrow" id="rotateArrow"></div>
         <div class="disc" id="compassDiscImg"></div>
     </div>
 
@@ -75,9 +75,6 @@
         <div>Smer: <span id="direction"></span></div>
         <div><a href="https://codepen.io/rlautan/pen/YPzGjo">Original from CodePen</a></div>
     </div>
-
-
-
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -95,14 +92,14 @@
 
                 // alpha: The direction the compass of the device aims to in degrees.
                 // alpha: De richting waarin de kompas van het apparaat heen wijst in graden.
-                var dir = eventData.alpha
+                var dir = eventData.alpha;
 
                 // Call the function to use the data on the page.
                 // Roep de functie op om de data op de pagina te gebruiken.
                 deviceOrientationHandler(tiltLR, tiltFB, dir);
             }, false);
         } else {
-            document.getElementById("notice").innerHTML = "Helaas. De DeviceOrientationEvent API word niet door dit toestel ondersteund."
+            document.getElementById("notice").innerHTML = "Zariadenie to nepodporuje"
         };
 
         function deviceOrientationHandler(tiltLR, tiltFB, dir) {
@@ -113,7 +110,7 @@
 
             // Rotate the disc of the compass.
             // Laat de kompas schijf draaien.
-            var compassDisc = document.getElementById("compassDiscImg");
+            var compassDisc = document.getElementById("rotateArrow");
             compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
             compassDisc.style.MozTransform = "rotate("+ dir +"deg)";
             compassDisc.style.transform = "rotate("+ dir +"deg)";
