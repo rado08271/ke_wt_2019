@@ -60,8 +60,6 @@
 </head>
 
 <body>
-    <h1>Coole kompas!</h1>
-
     <div id="notice"></div>
 
     <div class="compass">
@@ -70,9 +68,9 @@
     </div>
 
     <div class="orientation-data">
-        <div>Kantelen voor-achter: <span id="tiltFB"></span></div>
-        <div>Kantelen links-rechts: <span id="tiltLR"></span></div>
-        <div>Richting: <span id="direction"></span></div>
+        <div>Natocene do stran <span id="tiltFB"></span></div>
+        <div>Natocene nahor nadol<span id="tiltLR"></span></div>
+        <div>Smer: <span id="direction"></span></div>
     </div>
 
 
@@ -80,7 +78,7 @@
     document.addEventListener("DOMContentLoaded", function(event) {
 
         if (window.DeviceOrientationEvent) {
-            document.getElementById("notice").innerHTML = "Gaaf! De DeviceOrientationEvent API word door dit toestel ondersteund.";
+            document.getElementById("notice").innerHTML = "Najdi sa v meste!!!";
             window.addEventListener('deviceorientation', function(eventData) {
                 // gamma: Tilting the device from left to right. Tilting the device to the right will result in a positive value.
                 // gamma: Het kantelen van links naar rechts in graden. Naar rechts kantelen zal een positieve waarde geven.
@@ -103,6 +101,7 @@
         };
 
         function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+            console.log("tiltLR: " + tiltLR + "\ntiltFB: " + tiltFB + "\nDirection: " + dir);
             document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
             document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
             document.getElementById("direction").innerHTML = Math.ceil(dir);
