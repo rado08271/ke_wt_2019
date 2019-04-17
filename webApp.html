@@ -7,83 +7,62 @@
 </head>
 
 <body>
+    <h1>Coole kompas!</h1>
 
-<h2>Device orientation data</h2>
+    <div id="notice"></div>
 
-<p>
-    DeviceOrientationEvent.absolute =
-    <span id="doeAbsolute"></span>
-</p>
-<p>
-    DeviceOrientationEvent.alpha =
-    <span id="doeAlpha"></span>
-</p>
-<p>
-    DeviceOrientationEvent.beta =
-    <span id="doeBeta"></span>
-</p>
-<p>
-    DeviceOrientationEvent.gamma =
-    <span id="doeGamma"></span>
-</p>
+    <div class="compass">
+        <div class="arrow"></div>
+        <div class="disc" id="compassDiscImg"></div>
+    </div>
 
-<h1>Device orientation and motion demo</h1>
-
-<p id="dmeErr">
-
-</p>
-
-
-<h2>Device motion data</h2>
-
-<p>
-    DeviceMotionEvent.acceleration.x =
-    <span id="dmeAccX"></span>
-</p>
-<p>
-    DeviceMotionEvent.acceleration.y =
-    <span id="dmeAccY"></span>
-</p>
-<p>
-    DeviceMotionEvent.acceleration.z =
-    <span id="dmeAccZ"></span>
-</p>
+    <div class="orientation-data">
+        <div>Kantelen voor-achter: <span id="tiltFB"></span></div>
+        <div>Kantelen links-rechts: <span id="tiltLR"></span></div>
+        <div>Richting: <span id="direction"></span></div>
+    </div>
 
 
 <script type="text/javascript">
-    var x = 0, y = 0, z=0;
+    document.addEventListener("DOMContentLoaded", function(event) {
 
-    function doeHandler(ev) {
-        x = ev.alpha;
-        y = ev.beta;
-        z = ev.gamma;
-        document.getElementById("doeAbsolute").innerHTML= ev.absolute;
-        document.getElementById("doeAlpha").innerHTML= ev.alpha;
-        document.getElementById("doeBeta").innerHTML= ev.beta;
-        document.getElementById("doeGamma").innerHTML= ev.gamma;
-    }
+        if (window.DeviceOrientationEvent) {
+            document.getElementById("notice").innerHTML = "Gaaf! De DeviceOrientationEvent API word door dit toestel ondersteund.";
+            window.addEventListener('deviceorientation', function(eventData) {
+                // gamma: Tilting the device from left to right. Tilting the device to the right will result in a positive value.
+                // gamma: Het kantelen van links naar rechts in graden. Naar rechts kantelen zal een positieve waarde geven.
+                var tiltLR = eventData.gamma;
 
-    console.log("X: " + x + "\nY: " + y + "\nZ: " + z);
-    function dmeHandler(ev) {
-        document.getElementById("dmeAccX").innerHTML= ev.acceleration.x;
-        document.getElementById("dmeAccY").innerHTML= ev.acceleration.y;
-        document.getElementById("dmeAccZ").innerHTML= ev.acceleration.z;
-    }
+                // beta: Tilting the device from the front to the back. Tilting the device to the front will result in a positive value.
+                // beta: Het kantelen van voor naar achteren in graden. Naar voren kantelen zal een positieve waarde geven.
+                var tiltFB = eventData.beta;
 
-    if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', doeHandler);
-    }else{
-        document.getElementById("doeErr").innerHTML="ERROR: DeviceOrientationEvent not supported";
-    }
+                // alpha: The direction the compass of the device aims to in degrees.
+                // alpha: De richting waarin de kompas van het apparaat heen wijst in graden.
+                var dir = eventData.alpha
 
-    if (window.DeviceMotionEvent) {
-        window.addEventListener('devicemotion', dmeHandler);
-    }else{
-        document.getElementById("dmeErr").innerHTML="ERROR: DeviceMotionEvent not supported";
-    }
+                // Call the function to use the data on the page.
+                // Roep de functie op om de data op de pagina te gebruiken.
+                deviceOrientationHandler(tiltLR, tiltFB, dir);
+            }, false);
+        } else {
+            document.getElementById("notice").innerHTML = "Helaas. De DeviceOrientationEvent API word niet door dit toestel ondersteund."
+        };
 
+        function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+            document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
+            document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
+            document.getElementById("direction").innerHTML = Math.ceil(dir);
 
+            // Rotate the disc of the compass.
+            // Laat de kompas schijf draaien.
+            var compassDisc = document.getElementById("compassDiscImg");
+            compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
+            compassDisc.style.MozTransform = "rotate("+ dir +"deg)";
+            compassDisc.style.transform = "rotate("+ dir +"deg)";
+        }
 
+    });
 </script>
 
 
