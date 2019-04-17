@@ -12,124 +12,111 @@
             padding: 0;
             height: 100%;
         }
-
         body {
             background: #E8EDDF;
             margin: 30px;
             font-family: 'Montserrat';
             text-align: center;
         }
-
-            .compass {
-                position: relative;
-                width: 260px;
-                height: 260px;
-                margin: 20px auto;
-                /*background: #222;*/
-                padding: 20px;
-                border-radius: 40px;
-                border: 5px solid #444;
-                overflow: hidden;
-            }
-
-            .compass .disc {
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                z-index: 200;
-                border: solid #002639 3px;
-                border-radius: 260px;
-                width: 260px;
-                height: 260px;
-                background-size: 100%;
-            }
-
-            .compass .arrow {
-                position: absolute;
-                /*top: 20px;*/
-                /*left: 20px;*/
-                z-index: 1000;
-                background: url('pics/arrow.svg');
-
-                width: 260px;
-                height: 260px;
-                background-size: 100%;
-            }
-
-            .disc {
-                background: #002639;
-            }
-
-            .odkaz a {
-                color: #b3b7ac;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 2em;
-                font-weight: bold;
-            }
-
-            .odkaz a:hover {
-                color: #002639;
-            }
-
-            .smaller a {
-                font-size: 1em;
-            }
-
-            .web {
-                visibility: hidden;
-            }
+        .compass {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 20px auto;
+            /*background: #222;*/
+            padding: 20px;
+            border-radius: 40px;
+            border: 5px solid #444;
+            overflow: hidden;
+        }
+        .compass .disc {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 200;
+            border: solid #002639 3px;
+            border-radius: 260px;
+            width: 260px;
+            height: 260px;
+            background-size: 100%;
+        }
+        .compass .arrow {
+            position: absolute;
+            /*top: 20px;*/
+            /*left: 20px;*/
+            z-index: 1000;
+            background: url('pics/arrow.svg');
+            width: 260px;
+            height: 260px;
+            background-size: 100%;
+        }
+        .disc {
+            background: #002639;
+        }
+        .odkaz a {
+            color: #b3b7ac;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .odkaz a:hover {
+            color: #002639;
+        }
+        .smaller a {
+            font-size: 1em;
+        }
+        .web {
+            visibility: hidden;
+        }
     </style>
 </head>
 
 <body>
-    <div id="notice"></div>
+<div id="notice"></div>
 
-    <div class="compass">
-        <div class="arrow" id="rotateArrow"></div>
-        <div class="disc" id="compassDiscImg"></div>
-    </div>
+<div class="compass">
+    <div class="arrow" id="rotateArrow"></div>
+    <div class="disc" id="compassDiscImg"></div>
+</div>
 
-    <div class="orientation-data">
-        <!--<div>Natocene do stran <span id="tiltFB"></span></div>-->
-        <!--<div>Natocene nahor nadol<span id="tiltLR"></span></div>-->
-        <div>Smer: <span id="direction"></span></div>
+<div class="orientation-data">
+    <div>Natocene do stran <span id="tiltFB"></span></div>
+    <div>Natocene nahor nadol<span id="tiltLR"></span></div>
+    <div>Smer: <span id="direction"></span></div>
 
-        <div class="odkaz"><a href="https://codepen.io/rlautan/pen/YPzGjo">Original z CodePen</a></div>
-        <div class="odkaz smaller"><a href="https://hackernoon.com/building-a-compass-web-app-c79fec31e080">Viac informacii o tomto</a></div>
-        <div class="web">I can't show this in web window!</div>
-    </div>
+    <div class="odkaz"><a href="https://codepen.io/rlautan/pen/YPzGjo">Original z CodePen</a></div>
+    <div class="odkaz smaller"><a href="https://hackernoon.com/building-a-compass-web-app-c79fec31e080">Viac informacii o tomto</a></div>
+    <div class="web">I can't show this in web window!</div>
+</div>
 
 <script type="text/javascript">
     console.log(window.width);
     document.addEventListener("DOMContentLoaded", function(event) {
-
         if (window.DeviceOrientationEvent) {
             document.getElementById("notice").innerHTML = "Najdi sa v meste!!!";
             window.addEventListener('deviceorientation', function(eventData) {
                 // gamma: Tilting the device from left to right. Tilting the device to the right will result in a positive value.
+                // gamma: Het kantelen van links naar rechts in graden. Naar rechts kantelen zal een positieve waarde geven.
                 var tiltLR = eventData.gamma;
-
                 // beta: Tilting the device from the front to the back. Tilting the device to the front will result in a positive value.
+                // beta: Het kantelen van voor naar achteren in graden. Naar voren kantelen zal een positieve waarde geven.
                 var tiltFB = eventData.beta;
-
                 // alpha: The direction the compass of the device aims to in degrees.
+                // alpha: De richting waarin de kompas van het apparaat heen wijst in graden.
                 var dir = eventData.alpha;
-
                 // Call the function to use the data on the page.
+                // Roep de functie op om de data op de pagina te gebruiken.
                 deviceOrientationHandler(tiltLR, tiltFB, dir);
             }, false);
         } else {
             document.getElementById("notice").innerHTML = "Zariadenie to nepodporuje"
         };
-
         function deviceOrientationHandler(tiltLR, tiltFB, dir) {
             console.log("tiltLR: " + tiltLR + "\ntiltFB: " + tiltFB + "\nDirection: " + dir);
             document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
             document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
-
             var direction =  Math.ceil(dir);
-
             if(direction > 315 && direction <= 360)
                 document.getElementById("direction").innerHTML = "Sever";
             else if(direction > 270 && direction <= 315)
@@ -146,14 +133,13 @@
                 document.getElementById("direction").innerHTML = "Vychod";
             else if(direction > 0 && direction <= 45)
                 document.getElementById("direction").innerHTML = "Severo Vychod";
-
             // Rotate the disc of the compass.
+            // Laat de kompas schijf draaien.
             var compassDisc = document.getElementById("rotateArrow");
             compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
             compassDisc.style.MozTransform = "rotate("+ dir +"deg)";
             compassDisc.style.transform = "rotate("+ dir +"deg)";
         }
-
     });
 </script>
 </body>
