@@ -81,8 +81,6 @@
 </div>
 
 <div class="orientation-data">
-    <div>Natocene do stran <span id="tiltFB"></span></div>
-    <div>Natocene nahor nadol<span id="tiltLR"></span></div>
     <div>Smer: <span id="direction"></span></div>
 
     <div class="odkaz"><a href="https://codepen.io/rlautan/pen/YPzGjo">Original z CodePen</a></div>
@@ -114,8 +112,7 @@
         };
         function deviceOrientationHandler(tiltLR, tiltFB, dir) {
             console.log("tiltLR: " + tiltLR + "\ntiltFB: " + tiltFB + "\nDirection: " + dir);
-            document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
-            document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
+
             var direction =  Math.ceil(dir);
             if(direction > 315 && direction <= 360)
                 document.getElementById("direction").innerHTML = "Sever";
