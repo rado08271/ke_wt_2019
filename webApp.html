@@ -34,6 +34,22 @@
 </p>
 
 
+<h2>Device motion data</h2>
+
+<p>
+    DeviceMotionEvent.acceleration.x =
+    <span id="dmeAccX"></span>
+</p>
+<p>
+    DeviceMotionEvent.acceleration.y =
+    <span id="dmeAccY"></span>
+</p>
+<p>
+    DeviceMotionEvent.acceleration.z =
+    <span id="dmeAccZ"></span>
+</p>
+
+
 <script type="text/javascript">
     var x = 0, y = 0, z=0;
 
@@ -48,11 +64,22 @@
     }
 
     console.log("X: " + x + "\nY: " + y + "\nZ: " + z);
+    function dmeHandler(ev) {
+        document.getElementById("dmeAccX").innerHTML= ev.acceleration.x;
+        document.getElementById("dmeAccY").innerHTML= ev.acceleration.y;
+        document.getElementById("dmeAccZ").innerHTML= ev.acceleration.z;
+    }
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', doeHandler);
     }else{
         document.getElementById("doeErr").innerHTML="ERROR: DeviceOrientationEvent not supported";
+    }
+
+    if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', dmeHandler);
+    }else{
+        document.getElementById("dmeErr").innerHTML="ERROR: DeviceMotionEvent not supported";
     }
 
 
