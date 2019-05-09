@@ -202,3 +202,38 @@ body, html {
 
 }
 
+label{
+    vertical-align: top;
+    display: inline-block; /*instead of inline (default)*/
+    min-width: 6em;
+}
+
+label.long{
+    min-width: 8em;
+}
+
+input, textarea{
+    margin-bottom: 0.5em;
+}
+
+.warning{
+    color: red;
+}
+
+.skryty {display:none;}
+
+
+.zobraz {display:block;}
+
+
+body{
+    padding: 1rem;
+}
+
+.signOutRight {
+    float: right;
+}
+
+#userName {
+    color: #dd3344;
+}

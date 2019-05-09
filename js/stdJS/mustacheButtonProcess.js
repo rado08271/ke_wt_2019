@@ -16,7 +16,7 @@ function setButtons(startIndex, articlesTotalCount){
             },
             {
                 functionName: "writeArticles2Html((index + articlesPerPage) ,articlesPerPage, server, 'clanky', 'navigacia')",
-                text: "Nexta",
+                text: "Next",
                 idVal: (startIndex+articlesPerPage<articlesTotalCount-1) ? "show" : "hide"
             },
             {

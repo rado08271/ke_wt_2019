@@ -3,17 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id" content="1029678842004-cgp7r7hb11lbl8qm0t5cg7576944sea5.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="style/articles-list.css" media="screen" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <title>Zoznam článkov / Article List</title>
+
+    <script src="js/fbAccess.js"></script>
+    <!--<div id="fb-root"></div>-->
+    <!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=449170409175507&autoLogAppEvents=1"></script>-->
 </head>
 <body class="">
 
 <div class="container">
+
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()" class="signOutRight">Odhlásiť sa</button>
+        </div>
+
+    </aside>
+
+    <div id="facebookLogin">
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+    </div>
+
     <a class="back" href="./index.html">Spat domov</a>
-    <a class="article-create" href="articles/blogger.html">VYTVOR NOVY CLANOK</a>
+    <!---->
+    <!--<h2>Informácia o prihlásenom používateľovi</h2>-->
+    <!--<div id="userStatus"></div>-->
+
+    <!---->
+    <a class="article-create" href="articleForm.html">VYTVOR NOVY CLANOK</a>
     <p class="crumble"><a href="./index.html">Index</a> > <a href="listOfArticles.html">Články</a></p>
 
     <a id="menuToggle" onclick="toggleNav()" class="toggle-menu">Zobraz Clanky</a>
@@ -93,5 +116,9 @@
     <script src="js/articlesList.js"></script>
     <script src="js/stdJS/listOfArticles.js"></script>
     <script src="js/stdJS/mustacheButtonProcess.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+    <script src="js/googleAccess.js"></script>
+
 </body>
 </html>

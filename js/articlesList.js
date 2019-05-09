@@ -118,10 +118,12 @@ function writeArticles2Html(startIndex, max, server, articlesElmId, navElmId){
         function(JSONObj){renderListOfArticles(JSONObj, articlesElmId, navElmId, startIndex, max)},
         function(JSONObj){renderListOfArticles(JSONObj, articlesElmId, navElmId, startIndex, max)},
         function(status){errorDialog(status)});
+
 }
 
 function getAll(tag, startIndex, max, server, articlesElmId, navElmId) {
-    var restURL ="http://"+server+"/api/article?content="+tag;
+    //change this to get search results
+    var restURL ="http://"+server+"/api/article?title="+tag;
 
     console.log(restURL);
 

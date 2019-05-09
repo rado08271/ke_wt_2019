@@ -61,3 +61,22 @@ function writeComments2Html(commentsElmId) {
     }
 
 }
+
+/*
+/!**
+ * ako v predchadzajucich prikladoch
+ * as in the previous examples
+ *!/
+function writeArticle2Html(commentsElmId) {
+    if (isFinite(commentsElmId)) {
+        AJAXGetCall(sourceURL,
+            function (xhr) {
+                mrenderObjectWithTemplateFromFileAJAX(JSON.parse(xhr.responseText), "templates/article.mst", articleElmId);
+            },
+            function (xhr) {
+                errorAlert("Načitanie článku zlyhalo (article loading failed).",xhr);
+            }
+        );
+    }
+}
+*/

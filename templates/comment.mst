@@ -1,4 +1,8 @@
 {{#comments}}
+    <div id="btns">
+        <a onClick="deleteComment({{id}})">Vymaz</button>
+        <a id="btnEdit" href="commentForm.html?id={{article.id}}&commentId={{id}}">Edituj</a>
+    </div>
     <div class="theComment">
         <a>{{author}}</a>
         <p class="date">{{lastUpdated}}</p>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulár článku / Article Form</title>
+    <meta name="google-signin-client_id" content="1029678842004-cgp7r7hb11lbl8qm0t5cg7576944sea5.apps.googleusercontent.com">
+
+    <link rel="stylesheet" href="style/normalize.css" media="screen" />
+    <link rel="stylesheet"
+          href="style/blogStyleBasic.css"
+          media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<!--=======================================================-->
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+    <!--=======================================================-->
+    <script src="js/fbAccess.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/blogs.css" media="screen" />
+    <!--<div id="fb-root"></div>-->
+    <!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=449170409175507&autoLogAppEvents=1"></script>-->
+</head>
+<body>
+<header>
+    <h1 id="frmTitle">Pridaj clanok</h1>
+</header>
+    <p class="crumble"><a href="./index.html" onclick=goBack()>Index</a> > <a href="listOfArticles.html" onclick=goBack()>Články</a> > <a href="articleForm.html" onclick=goBack()>Vytvor blog</a></p>
+
+<main>
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()" class="signOutRight">Odhlásiť sa</button>
+        </div>
+    </aside>
+    <div id="facebookLogin">
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+    </div>
+
+    <form id="SKorFrm" method="post" action="articles/badProcessing.html">
+        <fieldset>
+            <legend>Autor:</legend><br>
+            <label for="authorName">*Autor</label><br>
+            <input type="text" name="author" id="authorName" title="Autor článku, maximálna dĺžka: 100 znakov (article author, max. length 100 characters)." maxlength="100" placeholder="Janko Hrasko" required />
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Clanok:</legend>
+            <label for="title">*Názov:</label><br>
+            <input type="text" name="title" id="title" size="50"  maxlength="100" placeholder="Night-life v Kosiciach" required pattern="^[A-Za-z][A-Za-z1-9 ]*$" title="Povolene su iba cisla, pismena, medzery clanok musi zacinat pismenom!"/>
+
+        <br>
+
+            <br>
+            <label for="imageLink">Obrázok (url):</label><br>
+            <input type="url" name="imageLink" id="imageLink" placeholder="http://web.com/pic.png" size="50" title="URL obrázka." maxlength="100"/>
+            <br>
+            <label>Klikni pre nahratie obrazka</label><br><button type="button" id="btShowFileUpload">Nahraj obrazok</button>
+
+            <fieldset class="added skryty" id="fsetFileUpload">
+                <legend>Nahranie obrázka</legend>
+                <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+                <button type="button" id="btFileUpload">Odosli</button>
+                <button type="button" id="btCancelFileUpload">Zrus</button>
+            </fieldset>
+
+            <br><br>
+            <label for="tags">Kľúčové slová: </label><br>
+            <input size="50" type="text" id="tags" list="category" autocomplete=on name="category" placeholder="Vyber rubriku">
+
+
+            <datalist id="category">
+                <option>Cestovanie</option>
+                <option>Miesta</option>
+                <option>Recenzia</option>
+                <option>Informacie</option>
+                <option>Event</option>
+                <option>Clanok</option>
+                <option>Umelecka tvorba</option>
+                <option>Zo zivota</option>
+                <option>Politika</option>
+                <option>Zabava</option>
+            </datalist>
+
+            <br>
+            <label for="content">*Text článku:</label><br>
+            <!--<textarea name="content" id="content" spellcheck="true" lang="sk" cols="50" rows="20" required title="Vloz nejaky text"></textarea><br>-->
+
+            <!--<textarea name="content" id="content" class="editable" spellcheck="true" lang="sk" cols="50" rows="20" required title="Vloz nejaky text"></textarea><br>-->
+            <textarea name="content" id="content" class="editable" spellcheck="true" lang="sk" cols="50" rows="20" required title="Vloz nejaky text" name="editordata"></textarea>
+        </fieldset>
+
+        <br>
+        <br>
+        <button type="button" id="btBack">
+            Späť
+        </button>
+        <button type="reset">
+            Reset
+        </button>
+        <button type="submit">
+            Ulož
+        </button>
+
+
+    </form>
+
+</main>
+
+<script>
+    $(function() {
+        $('textarea#froala-editor').froalaEditor()
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<script src="js/settings.js"></script>
+
+<script src="js/formProcessing.js"></script>
+<script src="js/queryStringProcess.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/ajaxCalls.js"></script>
+<script src="js/mustacheRenderer.js"></script>
+
+
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+<script src="js/googleAccess.js"></script>
+
+<script src="js/stdJS/editor.js"></script>
+<script src="js/articleForm.js"></script>
+
+
+</body>
+</html>

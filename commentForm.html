@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style/blogs.css" media="screen" />
+
+    <meta name="google-signin-client_id" content="1029678842004-cgp7r7hb11lbl8qm0t5cg7576944sea5.apps.googleusercontent.com">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="style/normalize.css" media="screen" />
+    <link rel="stylesheet"
+          href="style/blogStyleBasic.css"
+          media="screen" />
+</head>
+<body>
+
+    <h1>Uprav komentar</h1>
+    <form id="commentForm" method="post" action="articles/badProcessing.html">
+        <label for="authorName">*Meno</label><br>
+        <input type="text" name="author" id="authorName" placeholder="Jozko Mrkvivka" required/>
+        <br><label for="text">*Komentar</label><br>
+        <input type="text" name="text" id="text" placeholder="Velmi super pektne" required/>
+        <br>
+        <button type="submit" id="submitIt">
+            POSLI
+        </button>
+    </form>
+
+
+    <script src="js/googleAccess.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+    <script src="js/settings.js"></script>
+    <script src="js/queryStringProcess.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/mustacheRenderer.js"></script>
+    <script src="js/ajajCallsVanilla.js"></script>
+    <script src="js/formProcessing.js"></script>
+
+    <script src="js/articles.js"></script>
+    <script src="js/ajaxCalls.js"></script>
+    <script src="js/article.js"></script>
+    <script src="js/commentForm.js"></script>
+    <script src="js/comment.js"></script>
+</body>
+</html>
